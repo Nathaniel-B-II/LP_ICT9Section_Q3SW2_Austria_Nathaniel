@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Locator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 100%);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #0f2844;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 28px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-box input {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            width: 120px;
+        }
+
+        .search-box button {
+            padding: 8px 15px;
+            background-color: #5b7fa6;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(91, 127, 166, 0.7), rgba(91, 127, 166, 0.7));
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .budget-input {
+            width: 100%;
+            max-width: 700px;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .main-container {
+            display: flex;
+            gap: 40px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .left-section, .right-section {
+            flex: 1;
+        }
+
+        .left-section h3, .right-section h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #5b7fa6;
+            padding-bottom: 10px;
+        }
+
+        .centered-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;    
+        }
+
+        .brand-header {
+            background-color: #2d5a7b;
+            padding: 10px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            font-size: 12px;
+            width: 100%;
+        }
+
+        .brands-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        .brand-btn {
+            padding: 12px;
+            background-color: #2d5a7b;
+            color: #fff;
+            border: 2px solid #5b7fa6;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .brand-btn:hover {
+            background-color: #5b7fa6;
+        }
+
+        .eligibility {
+            background-color: #2d5a7b;
+            padding: 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        .discount-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .discount-btn {
+            padding: 12px;
+            background-color: #5b7fa6;
+            color: #fff;
+            border: 2px solid #5b7fa6;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .discount-btn:hover {
+            background-color: #2d5a7b;
+        }
+
+        .store-card {
+            background-color: #2d5a7b;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .store-logo {
+            margin-bottom: 15px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .store-logo img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        .silicon-valley {
+            background-color: #ffff00;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .store-name {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .store-location {
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0f2844;
+            margin-top: 40px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Product Locator</h1>
+            <nav class="nav-links">
+                <a href="#shop">Shop</a>
+                <a href="#locate">Locate</a>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Want a gaming laptop? 💻</h2>
+            <p>Enter your budget and let's find the right one for you!</p>
+            <input type="text" class="budget-input" id="budgetInput" placeholder="Enter here...">
+        </div>
+    </section>
+
+    <div class="main-container">
+        <div class="left-section">
+            <h3>Brand & Discounts</h3>
+            <div class="centered-content">
+                <div class="brand-header">Recommended Brands</div>
+                <div class="brands-list">
+                    <button class="brand-btn">Acer</button>
+                    <button class="brand-btn">Asus</button>
+                    <button class="brand-btn">Dell</button>
+                </div>
+                <div class="eligibility">You are eligible for: <span id="discountAmount">0.00</span></div>
+                <div class="discount-buttons">
+                    <button class="discount-btn" onclick="applyDiscount(20)">Senior ID </button>
+                    <button class="discount-btn" onclick="applyDiscount(20)">Student ID </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <h3>Store Location</h3>
+            <div class="store-card">
+                <div class="store-logo">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.4lp3_yfkTZONjY28WEOT_QHaBy?pid=Api&P=0&h=180" alt="VillMan Computers">
+                </div>
+                <p class="store-name">VillMan<br>COMPUTERS</p>
+                <p class="store-location">Location:<br>Cybercrime, SM City Moi Main Building<br>Quezon Highway, Carriedo Nag</p>
+            </div>
+            <div class="store-card">
+                <div class="store-logo silicon-valley">
+                    <img src="http://siliconvalley-hris.bitverseph.com/images/svlogo1.jpg" alt="Silicon Valley">
+                </div>
+                <p class="store-location">Location:<br>SM City Nosi East Wing Annex Bldg<br>Quezon City, Metro Manila</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© Nick Austria</p>
+    </footer>
+
+    <script>
+        function applyDiscount(percent) { 
+            let budget = budgetInput.value;
+            document.getElementById('discountAmount').textContent = (budget * percent / 100).toFixed(2);
+        }
+
+        const budgetInput = document.getElementById('budgetInput');
+        budgetInput.addEventListener('input', () => {
+            document.getElementById('discountAmount').textContent = '0.00';
+        })
+    </script>
+</body>
+</html>
